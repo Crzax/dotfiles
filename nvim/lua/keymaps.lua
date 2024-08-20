@@ -4,6 +4,14 @@ local opts = {
     silent = true,       -- Do not show message in the command line
 }
 
+--------------
+-- All modes --
+--------------
+
+-- Set <leader> key to <space>
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
 -----------------
 -- Normal mode --
 -----------------
@@ -22,8 +30,8 @@ vim.keymap.set('n', '<C-Down>', ':resize +2<CR>', opts)   -- Increase window hei
 vim.keymap.set('n', '<C-Left>', ':vertical resize -2<CR>', opts)  -- Decrease window width
 vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>', opts) -- Increase window width
 
--- Set to open NERDTree quickly
-vim.keymap.set('n', '<leader>e', ':NERDTreeToggle<CR>', opts)  -- Toggle NERDTree file explorer
+-- Set to open/close TOC quickly
+vim.keymap.set('n', '<leader>s', ':VimtexTocToggle<CR>', opts)  -- Toggle NERDTree file explorer
 
 -----------------
 -- Visual mode --
@@ -33,10 +41,5 @@ vim.keymap.set('n', '<leader>e', ':NERDTreeToggle<CR>', opts)  -- Toggle NERDTre
 vim.keymap.set('v', '<', '<gv', opts)  -- Indent left while maintaining selection
 vim.keymap.set('v', '>', '>gv', opts)  -- Indent right while maintaining selection
 
---------------
--- All modes --
---------------
 
--- Set <leader> key to <space>
-vim.g.mapleader = ' '
 

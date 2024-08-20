@@ -12,7 +12,7 @@ require('mason').setup({
 -- Setup Mason LSPconfig, which integrates Mason with Neovim's built-in LSP client configuration.
 require('mason-lspconfig').setup({
     -- A list of LSP servers to automatically install if they're not already installed.
-    ensure_installed = { 'pylsp', 'lua_ls', 'rust_analyzer' },
+    ensure_installed = { 'pylsp', 'lua_ls', 'rust_analyzer', 'texlab' },
 })
 
 -- Set different settings for different languages' LSP
@@ -26,7 +26,7 @@ local lspconfig = require('lspconfig')
 -- This function will be called when an LSP server attaches to a buffer, allowing us to set up key mappings and other buffer-local settings.
 -- Documentation: `:help vim.diagnostic.*` for more information on the diagnostic functions used below.
 local opts = { noremap = true, silent = true }
-vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)      -- Show diagnostics in a floating window
+vim.keymap.set('n', '<space>d', vim.diagnostic.open_float, opts)      -- Show diagnostics in a floating window
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)              -- Jump to the previous diagnostic
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)              -- Jump to the next diagnostic
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)       -- Add buffer diagnostics to the location list
@@ -68,3 +68,32 @@ lspconfig.pylsp.setup({
 	on_attach = on_attach,
 })
 
+-- LaTeX LSP Server
+lspconfig.texlab.setup({
+    on_attach = on_attach,
+})
+
+-- Lua LSP Server
+lspconfig.lua_ls.setup({
+	on_attach = on_attach,
+	settings = {
+		Lua = {
+			runtime = {
+				-- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+				version = "LuaJIT",
+			},
+			diagnostics = {
+				-- Get the language server to recognize the `vim` global
+				globals = { "vim" },
+			},
+			workspace = {
+				-- Make the server aware of Neovim runtime files
+				library = vim.api.nvim_get_runtime_file("", true),
+			},
+			-- Do not send telemetry data containing a randomized but unique identifier
+			telemetry = {
+				enable = false,
+			},
+		},
+	},
+})

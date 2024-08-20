@@ -32,9 +32,6 @@ require("lazy").setup({
   -- ACK search
   'mileszs/ack.vim',
 
-  -- Directory tree explorer
-  'preservim/nerdtree',
-
   -- Auto commenter based on language
   'scrooloose/nerdcommenter',
 
@@ -42,6 +39,15 @@ require("lazy").setup({
   {
     "onsails/lspkind.nvim",
     event = { "VimEnter" },
+  },
+
+  -- Directory tree explorer
+  {
+    'preservim/nerdtree',
+    config = function()
+      -- Set to open NERDTree quickly
+      vim.api.nvim_set_keymap('n', '<leader>t', ':NERDTreeToggle<CR>', { noremap = true, silent = true })
+    end,
   },
 
   -- Auto-completion engine
@@ -117,6 +123,14 @@ require("lazy").setup({
     'goerz/jupytext.vim',
     config = function()
       require('config.nvim-jupytext').setup()
+    end,
+  },
+
+  -- Latex support
+  {
+    'lervag/vimtex',
+    config = function()
+      require('config.nvim-vimtex').setup()
     end,
   },
 })
