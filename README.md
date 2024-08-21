@@ -4,7 +4,7 @@
 
 Using version control systems to manage my dotfiles ensures that every computer's configuration is ready to use out of the box. 
 
-It's based on windows, maybe you should modify some configurations to make it suitable for Linux.
+Neovim's configurations is based on windows, maybe you should modify some configurations to make it suitable for Linux.
 
 ## What is inside ?
 - **Bash**
