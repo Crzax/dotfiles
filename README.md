@@ -2,7 +2,9 @@
 
 > [*Your dotfiles will most likely be the longest project you ever work on.*](https://www.anishathalye.com/2014/08/03/managing-your-dotfiles/)
 
-Using version control systems to manage my dotfiles ensures that every server's configuration is ready to use out of the box. 
+Using version control systems to manage my dotfiles ensures that every computer's configuration is ready to use out of the box. 
+
+It's based on windows, maybe you should modify some configurations to make it suitable for Linux.
 
 ## What is inside ?
 - **Bash**
@@ -73,7 +75,7 @@ Using version control systems to manage my dotfiles ensures that every server's 
 
     - **File Search**
         - [CtrlP](https://github.com/kien/ctrlp.vim): Enables quick file search with the [ctrlpvim/ctrlp.vim](https://github.com/kien/ctrlp.vim) plugin (using the `<C-P>` shortcut).
-        - [ACK](https://github.com/mileszs/ack.vim): Provides advanced text search capabilities with the [mileszs/ack.vim](https://github.com/mileszs/ack.vim) plugin.
+        - [ACK](https://github.com/mileszs/ack.vim): Provides advanced text search capabilities with the [mileszs/ack.vim](https://github.com/mileszs/ack.vim) plugin. You should install ACK in windows at first.
 
     - **File Explorer**
         - [NERDTree](https://github.com/preservim/nerdtree): Uses the [preservim/nerdtree](https://github.com/preservim/nerdtree) plugin for directory tree browsing.
@@ -108,5 +110,7 @@ Using version control systems to manage my dotfiles ensures that every server's 
         - [Iron.nvim](https://github.com/Vigemus/iron.nvim): Provides REPL support for various programming languages with the [Vigemus/iron.nvim](https://github.com/Vigemus/iron.nvim) plugin.
 
     - **Jupyter Notebook Conversion**
-        - [Jupytext](https://github.com/GCBallesteros/jupytext.nvim): Converts between `.ipynb` and `.py` files with the [goerz/jupytext.vim](https://github.com/GCBallesteros/jupytext.nvim) plugin.
+        - [Jupytext](https://github.com/GCBallesteros/jupytext.nvim): Converts between `.ipynb` and `.py` files with the [goerz/jupytext.vim](https://github.com/GCBallesteros/jupytext.nvim) plugin. You should install jupytext(python-packet).
 
+    - **Latex**
+        - [vimtex](https://github.com/lervag/vimtex): You should install SumatraPDF in windows,neovim-remote(python-packet) and config them. 
