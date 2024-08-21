@@ -12,7 +12,7 @@ require('mason').setup({
 -- Setup Mason LSPconfig, which integrates Mason with Neovim's built-in LSP client configuration.
 require('mason-lspconfig').setup({
     -- A list of LSP servers to automatically install if they're not already installed.
-    ensure_installed = { 'pylsp', 'lua_ls', 'texlab' },
+    ensure_installed = { 'pylsp', 'lua_ls', 'texlab', 'clangd' },
 })
 
 -- Set different settings for different languages' LSP
@@ -96,4 +96,9 @@ lspconfig.lua_ls.setup({
             },
         },
     },
+})
+
+-- C/C++ LSP Server
+lspconfig.clangd.setup({
+    on_attach = on_attach,
 })
