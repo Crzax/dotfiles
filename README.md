@@ -114,3 +114,7 @@ Neovim's configurations is based on windows, maybe you should modify some config
 
     - **Latex**
         - [vimtex](https://github.com/lervag/vimtex): You should install SumatraPDF in windows,neovim-remote(python-packet) and config them. 
+
+    - **Coplit**
+        - [copilot.vim](https://github.com/github/copilot.vim): Provide Copilot service.
+        - [CopilotChat](https://github.com/CopilotC-Nvim/CopilotChat.nvim): Chat with Copilot.
