@@ -30,3 +30,8 @@ vim.opt.hlsearch = false -- Do not highlight matches after search
 vim.opt.ignorecase = true -- Ignore case in search patterns
 vim.opt.smartcase = true -- Override 'ignorecase' if search pattern contains uppercase letters
 
+-- Proxy
+vim.env.http_proxy = 'http://127.0.0.1:10809'
+vim.env.https_proxy = 'http://127.0.0.1:10809'
+
+
