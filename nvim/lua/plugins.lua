@@ -34,15 +34,18 @@ require("lazy").setup({
     -- <C-P> search file
     'ctrlpvim/ctrlp.vim',
 
-    -- ACK search
-    'mileszs/ack.vim',
-
     -- Auto commenter based on language
     'scrooloose/nerdcommenter',
 
     ------------
     -- Medium --
     ------------
+
+    -- ACK search
+    {
+        'mileszs/ack.vim',
+        event = "VeryLazy",
+    },
 
     -- VSCode-like pictograms
     {
@@ -87,7 +90,7 @@ require("lazy").setup({
         cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
         build = function() vim.fn["mkdp#util#install"]() end,
         config = function()
-            require("config.nvim-markdown").setup()
+            require("config.markdown-preview").setup()
         end,
         ft = { "markdown" },
     },
@@ -99,7 +102,7 @@ require("lazy").setup({
     {
         "Vigemus/iron.nvim",
         config = function()
-            require('config.nvim-iron')
+            require('config.iron')
         end,
     },
 
@@ -107,7 +110,7 @@ require("lazy").setup({
     {
         'goerz/jupytext.vim',
         config = function()
-            require('config.nvim-jupytext').setup()
+            require('config.jupytext').setup()
         end,
     },
 
@@ -115,7 +118,7 @@ require("lazy").setup({
     {
         'lervag/vimtex',
         config = function()
-            require('config.nvim-vimtex').setup()
+            require('config.vimtex').setup()
         end,
     },
 
@@ -123,7 +126,7 @@ require("lazy").setup({
     {
         'github/copilot.vim',
         config = function()
-            require('config.nvim-copilot').setup()
+            require('config.copilot').setup()
         end,
     },
 
@@ -132,9 +135,9 @@ require("lazy").setup({
     ----------------
 
     -- Copilot Chat
-    require('extras.nvim-copilot-chat'),
+    require('extras.CopilotChat'),
 
     -- Run Python as Jupyter Notebook
-    require('extras.nvim-noteook-navigator'),
+    require('extras.NotebookNavigator'),
 
 })
