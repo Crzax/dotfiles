@@ -7,6 +7,7 @@ Using version control systems to manage my dotfiles ensures that every computer'
 Neovim's configurations is based on windows, maybe you should modify some configurations to make it suitable for Linux.
 
 ## What is inside ?
+
 - **Bash**
     - **General settings**
       - Append to the history file, don't overwrite it
@@ -74,17 +75,18 @@ Neovim's configurations is based on windows, maybe you should modify some config
         - [LSP Config](https://github.com/neovim/nvim-lspconfig): Configures and enables LSP servers with [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig).
 
     - **File Search**
-        - [CtrlP](https://github.com/kien/ctrlp.vim): Enables quick file search with the [ctrlpvim/ctrlp.vim](https://github.com/kien/ctrlp.vim) plugin (using the `<C-P>` shortcut).
+        - [LeaderF](https://github.com/Yggdroot/LeaderF): Enables quick file/Tags search with the [LeaderF](https://github.com/Yggdroot/LeaderF) plugin (using the `<C-P>` shortcut). You should install pynvim and rg(If you want to use).
         - [ACK](https://github.com/mileszs/ack.vim): Provides advanced text search capabilities with the [mileszs/ack.vim](https://github.com/mileszs/ack.vim) plugin. You should install ACK in windows at first.
 
     - **File Explorer**
-        - [NERDTree](https://github.com/preservim/nerdtree): Uses the [preservim/nerdtree](https://github.com/preservim/nerdtree) plugin for directory tree browsing.
+        - [nvim-tree](https://github.com/nvim-tree/nvim-tree.lua): Uses the [nvim-tree](https://github.com/nvim-tree/nvim-tree.lua) plugin for directory tree browsing.
 
     - **Commenting**
         - [NERD Commenter](https://github.com/preservim/nerdcommenter): Automatically comments code with the [scrooloose/nerdcommenter](https://github.com/preservim/nerdcommenter) plugin.
 
     - **VSCode-like Pictograms**
         - [LSP Kind](https://github.com/onsails/lspkind.nvim): Provides VSCode-like pictograms for auto-completion items with the [onsails/lspkind.nvim](https://github.com/onsails/lspkind.nvim) plugin.
+        - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter): To highlight, edit, and refactor code with it.
 
     - **Auto-Completion**
         - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp): Implements auto-completion with the [hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp) plugin:
@@ -118,3 +120,17 @@ Neovim's configurations is based on windows, maybe you should modify some config
     - **Copilot**
         - [copilot.vim](https://github.com/github/copilot.vim): Provide Copilot service.
         - [CopilotChat](https://github.com/CopilotC-Nvim/CopilotChat.nvim): Chat with Copilot.
+
+    - **Dap**
+        - [nvim-dap](https://github.com/mfussenegger/nvim-dap): Debug Adapter Protocol for Neovim.
+        - [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui): Debug Adapter Protocol UI for Neovim.
+        - [nvim-dap-virtual-text](https://github.com/theHamsta/nvim-dap-virtual-text): Debug Adapter Protocol virtual text for Neovim.
+        - [Mason-tool-installer](https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim): Install debug adapter protocol tools with Mason.
+    
+    - **UI**
+        - [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons): Icons for neovim plugins.
+        - [nvim-bufferline.lua](https://github.com/girishji/bufline.vim): Bufferline for neovim.
+        - [nvim-lualine](https://github.com/nvim-lualine/lualine.nvim): I use the evil theme to show the statusline.
+        - [nvim-dashboard](https://github.com/nvimdev/dashboard-nvim): Set up my own dashboard.
+    - **Terminal**
+        - [Toggleterm](https://github.com/akinsho/toggleterm.nvim): Quickly open a terminal with it.
