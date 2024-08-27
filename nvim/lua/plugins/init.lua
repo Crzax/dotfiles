@@ -31,15 +31,106 @@ require("lazy").setup({
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
 
-    -- <C-P> search file
-    'ctrlpvim/ctrlp.vim',
-
     -- Auto commenter based on language
     'scrooloose/nerdcommenter',
+
+    -- Debugger
+    'mfussenegger/nvim-dap',
+    'WhoIsSethDaniel/mason-tool-installer.nvim',
 
     ------------
     -- Medium --
     ------------
+    {
+        "nvim-tree/nvim-tree.lua",
+        version = "*",
+        lazy = false,
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
+        config = function()
+            require("plugins.config.nvim-tree")
+        end,
+    },
+
+    -- ToggleTerm
+    {
+        "akinsho/toggleterm.nvim",
+        version = "v2.*",
+        config = function()
+            require('plugins.config.toggleterm')
+        end
+    },
+
+    -- Dashboard
+    {
+        'nvimdev/dashboard-nvim',
+        event = 'VimEnter',
+        config = function()
+            require('plugins.config.dashboard')
+        end,
+        dependencies = {
+            'nvim-tree/nvim-web-devicons',
+            'Yggdroot/LeaderF',
+        }
+    },
+
+    -- LeaderF
+    {
+        'Yggdroot/LeaderF',
+        event = 'VeryLazy',
+        config = function()
+            require('plugins.config.leaderf').setup()
+        end,
+    },
+
+    -- Bufferline
+    {
+        'akinsho/bufferline.nvim',
+        event = 'BufRead',
+        config = function()
+            require('plugins.config.bufferline')
+        end,
+        dependencies = { 'kyazdani42/nvim-web-devicons' }
+    },
+
+    -- Statusline
+    {
+        'hoob3rt/lualine.nvim',
+        config = function()
+            require('plugins.config.lualine').setup()
+        end,
+        dependencies = { 'kyazdani42/nvim-web-devicons' }
+    },
+
+    -- Treesitter
+    {
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate",
+        event = "BufRead",
+        config = function()
+            require("plugins.config.nvim-treesitter").setup()
+        end,
+    },
+
+    -- Debugger virtual text
+    {
+        'theHamsta/nvim-dap-virtual-text',
+        dependencies = {
+            'mfussenegger/nvim-dap',
+            'nvim-neotest/nvim-nio',
+            'nvim-treesitter/nvim-treesitter',
+        },
+    },
+
+    -- Debugger UI
+    {
+        "rcarriga/nvim-dap-ui",
+        dependencies = {
+            "mfussenegger/nvim-dap",
+            'nvim-neotest/nvim-nio',
+        },
+    },
 
     -- ACK search
     {
@@ -53,16 +144,6 @@ require("lazy").setup({
         event = { "VimEnter" },
     },
 
-    -- Directory tree explorer
-    {
-        'preservim/nerdtree',
-        event = "VeryLazy",
-        config = function()
-            -- Set to open NERDTree quickly
-            vim.api.nvim_set_keymap('n', '<leader>t', ':NERDTreeToggle<CR>', { noremap = true, silent = true })
-        end,
-    },
-
     -- Auto-completion engine
     {
         "hrsh7th/nvim-cmp",
@@ -74,7 +155,7 @@ require("lazy").setup({
             "hrsh7th/cmp-cmdline",  -- Cmdline source for nvim-cmp
         },
         config = function()
-            require("config.nvim-cmp")
+            require("plugins.config.nvim-cmp")
         end,
     },
 
@@ -90,7 +171,7 @@ require("lazy").setup({
         cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
         build = function() vim.fn["mkdp#util#install"]() end,
         config = function()
-            require("config.markdown-preview").setup()
+            require("plugins.config.markdown-preview").setup()
         end,
         ft = { "markdown" },
     },
@@ -101,8 +182,9 @@ require("lazy").setup({
     -- REPL configuration
     {
         "Vigemus/iron.nvim",
+        event = "BufRead",
         config = function()
-            require('config.iron')
+            require('plugins.config.iron')
         end,
     },
 
@@ -110,7 +192,7 @@ require("lazy").setup({
     {
         'goerz/jupytext.vim',
         config = function()
-            require('config.jupytext').setup()
+            require('plugins.config.jupytext').setup()
         end,
     },
 
@@ -118,7 +200,7 @@ require("lazy").setup({
     {
         'lervag/vimtex',
         config = function()
-            require('config.vimtex').setup()
+            require('plugins.config.vimtex').setup()
         end,
     },
 
@@ -126,7 +208,7 @@ require("lazy").setup({
     {
         'github/copilot.vim',
         config = function()
-            require('config.copilot').setup()
+            require('plugins.config.copilot').setup()
         end,
     },
 
@@ -135,9 +217,9 @@ require("lazy").setup({
     ----------------
 
     -- Copilot Chat
-    require('extras.CopilotChat'),
+    require('plugins.CopilotChat'),
 
     -- Run Python as Jupyter Notebook
-    require('extras.NotebookNavigator'),
+    require('plugins.NotebookNavigator'),
 
 })

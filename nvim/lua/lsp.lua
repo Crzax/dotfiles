@@ -98,7 +98,18 @@ lspconfig.lua_ls.setup({
     },
 })
 
+-- Customized on_attach function for clangd
+local clangd_on_attach = function(client, bufnr)
+    -- Call the common on_attach function to set up common key mappings
+    on_attach(client, bufnr)
+
+    -- Define additional key mappings specific to clangd
+    -- Compiler
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "<F1>", "<cmd>make<CR>", {silent = true, noremap = true})
+    -- Compiler and run
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "<F2>", "<cmd>make run<CR>", {silent = true, noremap = true})end
+
 -- C/C++ LSP Server
 lspconfig.clangd.setup({
-    on_attach = on_attach,
+    on_attach = clangd_on_attach,
 })
