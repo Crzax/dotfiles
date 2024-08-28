@@ -86,7 +86,7 @@ Neovim's configurations is based on windows, maybe you should modify some config
 
     - **VSCode-like Pictograms**
         - [LSP Kind](https://github.com/onsails/lspkind.nvim): Provides VSCode-like pictograms for auto-completion items with the [onsails/lspkind.nvim](https://github.com/onsails/lspkind.nvim) plugin.
-        - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter): To highlight, edit, and refactor code with it.
+        - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter): To highlight, edit, and refactor code with it. You should install tree-sitter CLI by npm(Recommended) at first.
 
     - **Auto-Completion**
         - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp): Implements auto-completion with the [hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp) plugin:
