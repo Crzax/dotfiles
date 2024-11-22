@@ -1,6 +1,6 @@
 -- Install debugpy with mason
 require('mason-tool-installer').setup({
-    ensure_installed = { 'debugpy' },
+    ensure_installed = { 'debugpy', 'cpptools' },
 })
 
 -- Set up the UIs
@@ -78,11 +78,11 @@ vim.keymap.set({ "i", "n", "v" }, "<F12>", "<cmd>lua require'dap'.step_out()<CR>
     { silent = true, noremap = true, buffer = bufnr })
 vim.keymap.set({ "i", "n", "v" }, "<F9>", "<cmd>lua require'dap'.toggle_breakpoint()<CR>",
     { silent = true, noremap = true, buffer = bufnr })
-vim.keymap.set({ "i", "n", "v" }, "dc", "<cmd>lua require'dap'.disconnect()<CR>",
+vim.keymap.set({ "i", "n", "v" }, "<leader>sb", "<cmd>lua require'dap'.step_back()<CR>",
     { silent = true, noremap = true, buffer = bufnr })
-vim.keymap.set({ "i", "n", "v" }, "sb", "<cmd>lua require'dap'.step_back()<CR>",
+vim.keymap.set({ "i", "n", "v" }, "<leader>cl", "<cmd>lua require'dapui'.close()<CR>",
     { silent = true, noremap = true, buffer = bufnr })
 
+require('dap.dapui')
 require('dap.python')
 require('dap.cpp')
-require('dap.dapui')
